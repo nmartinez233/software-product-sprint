@@ -5,6 +5,7 @@
 body {
      background-image: url("images/green.jpg");
      background-size: cover;
+     color: white;
  }
 
 #content {
@@ -12,13 +13,7 @@ body {
   margin-right: auto;
   margin-top: 50px;
   width: 650px;
-  color: white;
   
-}
-
-#greeting-container {
-  margin-top: 20px;
-  color: white;
 }
 
 .column {
@@ -26,7 +21,7 @@ body {
   width: 50%;
   margin: auto;
   padding: 5px;
-  color: white;
+  
 }
 
 /* Clearfix (clear floats) */
@@ -34,6 +29,7 @@ body {
   content: "";
   clear: both;
   display: table;
+  color: white;
 }
 
 .container {
