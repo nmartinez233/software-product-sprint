@@ -7,12 +7,71 @@
     <script src="script.js"></script>
   </head>
   <body>
+    <div class="navbar">
+            <a href="#aboutme">About Me!</a>
+            <a href="#Weather">Projects!</a>
+            <a href="#socialmedia">Social Media</a>
+            <a href="#funfacts">Fun Facts!</a>
+    </div>
+
     <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
+      <h1>Nathaniel's Portfolio!</h1>
+
+      <h1 id="aboutme">About Me!</h1>
+      <p>Hi there! I'm Nathaniel, a second year Questbridge Match Scholar at the University
+          of Chicago studying Computer Science & Environmental Science!</p>
+          <div class="row">
+            <div class="column">
+          <img src="/images/questbridge.jpg" alt="questbridge" style="width:100%">
+          </div>
+          <div class="column">
+            <img src="/images/uchicago.png" alt="uchicago" style="width:100%">
+          </div>
+          </div>
+        <div class="row">
+            <div class="column">
+                <p>This is me during my first week of college!</p>                
+                <img src="/images/smiling.jpeg" alt="Me" style="width:100%">
+            </div>
+            <div class="column">
+                <p>11 year old me didn't understand the physics of sledding...</p>
+                <img src="/images/vibing.JPG" alt="Sledding" style="width:100%">
+            </div>
+        </div>
+        <div class="container">
+            <img src="/images/weather.gif" alt="weathergif" style="width:100%">
+            <div class="centered">
+                <h1 id="Weather">Some of my Projects!<br></br></h1>
+                <br></br>
+                <p>This past summer I worked at Argonne National Laboratory conducting atmospheric 
+                    research with the help of some amazing mentors! It was my first time working with 
+                    machine learning and was able to learn how radar images are generated from radar 
+                    data and ultimately how to classify the images by convectivity present. I enjoyed 
+                    working at Argonne so much I will return this summer too!
+                </p>
+                </div>
+                <a href= "https://github.com/nmartinez233/dnn_hailstorm_classifier">              
+                <img src="/images/weatherslide.png" alt="weather" style="width:100%">
+                </a>
+        </div>
+        <h1 id="socialmedia">Follow me on Social Media</h1>
+        <div class="row">
+            <div class="column">
+                <p>Add me on Linkedin...</p> 
+                <a href= "https://www.linkedin.com/in/nathaniel-martinez/">              
+                <img src="/images/linkedin.png" alt="linkedin" style="width:100%">
+                </a> 
+            </div>
+            <div class="column">
+                <p>...or Instagram!</p>
+                <a href= "https://www.instagram.com/n__martinez23/">
+                <img src="/images/instagram.png" alt="instagram" style="width:100%">
+                </a>
+            </div>
+        </div>
+        <h1 id="funfacts">Fun Facts!</h1>
+      <p>Click here to get a fun fact!</p>
+      <button onclick="addRandomGreeting()">About me!</button>
       <div id="greeting-container"></div>
     </div>
   </body>
