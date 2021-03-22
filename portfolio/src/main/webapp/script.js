@@ -15,7 +15,8 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
+function addRandomGreeting() 
+{
   const greetings =
       ["I'm originally from the suburbs of Chicago!", "I'm the youngest sibling!", 
       "I skipped kindergarten!", "The longest road trip I've taken was 4 days to get to Mexico!"];
@@ -26,4 +27,37 @@ function addRandomGreeting() {
   // Add it to the page.
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
+}
+
+async function sayHello() 
+{
+    const responseFromServer = await fetch("/hello");
+    const textFromResponse = await responseFromServer.text();
+
+    const helloContainer = document.getElementById('hello-container');
+    helloContainer.innerText = textFromResponse;
+}
+
+async function pullWeather() {
+  const responseFromServer = await fetch('/weather');
+  const phenomena = await responseFromServer.json();
+
+  const weather = phenomena[Math.floor(Math.random() * phenomena.length)];
+  
+  const weatherListElement = document.getElementById('weather-container');
+  weatherListElement.innerHTML = '';
+
+  weatherListElement.appendChild(
+      createListElement('Weather event: ' + weather.weather));
+  weatherListElement.appendChild(
+      createListElement('Season it occurs: ' + weather.season));
+
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) 
+{
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
 }
