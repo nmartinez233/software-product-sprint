@@ -29,9 +29,23 @@ function addRandomGreeting() {
 }
 
 async function sayHello() {
-  const responseFromServer = await fetch('/hello');
-  const textFromResponse = await responseFromServer.text();
+  const responseFromServer = await fetch('/hello2');
+  const languages = await responseFromServer.json();
 
-  const dateContainer = document.getElementById('hello-container');
-  dateContainer.innerText = textFromResponse;
+  const hello = languages[Math.floor(Math.random() * languages.length)];
+  
+  const statsListElement = document.getElementById('hello-container');
+  statsListElement.innerHTML = '';
+
+  statsListElement.appendChild(
+      createListElement('Language: ' + hello.lang));
+  statsListElement.appendChild(
+      createListElement('Say hello in ' + hello.lang +'! '+ hello.greeting));
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
 }
