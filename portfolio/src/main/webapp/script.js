@@ -15,7 +15,8 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
+function addRandomGreeting() 
+{
   const greetings =
       ["I'm originally from the suburbs of Chicago!", "I'm the youngest sibling!", 
       "I skipped kindergarten!", "The longest road trip I've taken was 4 days to get to Mexico!"];
@@ -28,23 +29,34 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-async function sayHello() {
-  const responseFromServer = await fetch('/hello2');
-  const languages = await responseFromServer.json();
+async function sayHello() 
+{
+    const responseFromServer = await fetch("/hello");
+    const textFromResponse = await responseFromServer.text();
 
-  const hello = languages[Math.floor(Math.random() * languages.length)];
+    const helloContainer = document.getElementById('hello-container');
+    helloContainer.innerText = textFromResponse;
+}
+
+async function pullWeather() {
+  const responseFromServer = await fetch('/weather');
+  const phenomena = await responseFromServer.json();
+
+  const weather = phenomena[Math.floor(Math.random() * phenomena.length)];
   
-  const statsListElement = document.getElementById('hello-container');
-  statsListElement.innerHTML = '';
+  const weatherListElement = document.getElementById('weather-container');
+  weatherListElement.innerHTML = '';
 
-  statsListElement.appendChild(
-      createListElement('Language: ' + hello.lang));
-  statsListElement.appendChild(
-      createListElement('Say hello in ' + hello.lang +'! '+ hello.greeting));
+  weatherListElement.appendChild(
+      createListElement('Weather event: ' + weather.weather));
+  weatherListElement.appendChild(
+      createListElement('Season it occurs: ' + weather.season));
+
 }
 
 /** Creates an <li> element containing text. */
-function createListElement(text) {
+function createListElement(text) 
+{
   const liElement = document.createElement('li');
   liElement.innerText = text;
   return liElement;
