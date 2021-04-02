@@ -61,3 +61,22 @@ function createListElement(text)
   liElement.innerText = text;
   return liElement;
 }
+
+function translate_spanish() {
+        const text = document.getElementById('text').value;
+        const languageCode = "es";
+
+        const resultContainer = document.getElementById('spanish_text');
+        resultContainer.innerText = '';
+
+        const params = new URLSearchParams();
+        params.append('text', text);
+        params.append('languageCode', languageCode);
+
+        fetch('/translate', 
+        {method: 'POST',
+          body: params})
+          .then(response => response.text())
+          .then((translatedMessage) => 
+          {resultContainer.innerText = translatedMessage;});
+      }

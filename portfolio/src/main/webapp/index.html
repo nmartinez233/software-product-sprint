@@ -79,15 +79,22 @@
       <button onclick="pullWeather()">Weather Fact!</button>
       <p id="weather-container"></p>
 
+    <p>Feel free to send me a message below using the contact form! <br></br></p>
+    <p>Try challenging yourself and send me a message in Spanish! Don't know Spanish? Translate your message below! <br></br></p>
+    
+    <textarea id="text"></textarea><br></br>
+    <button onclick="translate_spanish()">Translate into Spanish!</button>
+    <div id="spanish_text"></div>
+
+    <br></br>
         <form action="/form-handler" method="POST">
-            <p>Feel free to contact me below!</p>
             <textarea name="name">Input name here</textarea>
             <br/>
             <textarea name="email">Input email here</textarea>
             <br/>
             <textarea name="msg">Input message here</textarea>
             <br/>
-            <input type="submit" />
+            <input type="submit"/>
         </form>      
     </div>
   </body>
